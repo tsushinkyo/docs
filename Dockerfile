@@ -1,13 +1,14 @@
-FROM risingstack/alpine:3.4-v6.9.4-4.2.0
+FROM alpine/1
 
-ENV PORT 3001
+ENV PORT 4040
 
-EXPOSE 3001
+EXPOSE 4040
 
 COPY package.json package.json
+RUN npm install -g typescript
 RUN npm install
 
 COPY . .
 RUN npm run build
 
-CMD ["node", "dist/"]
+CMD ["ts-node", "src/server.ts"]
