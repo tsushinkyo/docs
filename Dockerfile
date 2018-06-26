@@ -1,14 +1,22 @@
-FROM alpine/1
+# install latest node
+# https://hub.docker.com/_/node/
+FROM node:latest
 
-ENV PORT 4040
+# create and set app directory
+RUN mkdir -p /usr/src/app/
+WORKDIR /usr/src/app/
 
-EXPOSE 4040
-
-COPY package.json package.json
+# install app dependencies
+# this is done before the following COPY command to take advantage of layer caching
+# remember the working directory is `/usr/src/app/`
+COPY package.json .
 RUN npm install -g typescript
 RUN npm install
 
+# copy app source to destination container
 COPY . .
-RUN npm run build
 
-CMD ["ts-node", "src/server.ts"]
+# expose container port
+EXPOSE 4040
+
+CMD npm start

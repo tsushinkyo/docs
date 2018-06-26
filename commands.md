@@ -22,7 +22,32 @@ list npm packages
     npm ls --depth=0
 ```
 
+
+## Docker
+
+RUN:
+
+```
+docker run -v $(pwd):/src -it <container_name>
+
+```
+
+enter in a container:
+
+```bash
+sudo docker exec -i -t 665b4a1e17b6 /bin/bash
+or
+sudo docker exec -i -t loving_heisenberg /bin/bash
+```
+
+Stop all containers:
+
+```
+docker stop $(docker ps -a -q)
+```
+
 ## Test
+
 
 Install insomnia
 
