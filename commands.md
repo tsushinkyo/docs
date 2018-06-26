@@ -42,10 +42,23 @@ or
 sudo docker exec -i -t loving_heisenberg /bin/bash
 ```
 
+Stop container:
+
+```bash
+docker stop <container>
+```
+
 Stop all containers:
 
-```
+```bash
 docker stop $(docker ps -a -q)
+```
+
+delete container:
+
+```bash
+docker rm <container>
+
 ```
 
 ## Test
