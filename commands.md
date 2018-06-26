@@ -30,6 +30,8 @@ RUN:
 ```
 docker run -v $(pwd):/src -it <container_name>
 
+docker run --net="host" <container_name>
+
 ```
 
 enter in a container:
