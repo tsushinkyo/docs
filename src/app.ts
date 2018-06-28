@@ -20,7 +20,7 @@ class App {
 
     router.get('/', (req: Request, res: Response) => {
       res.status(200).send({
-        message: 'Hello Jenkins!'
+        message: 'Hello Jenkins!!'
       })
     });
 
