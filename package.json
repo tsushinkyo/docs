@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start dist/server.js",
+    "start": "pm2 start dist/index.js",
     "build": "tsc",
     "dev": "tsc --watch & nodemon dist",
     "test": "tsc && mocha dist/**/*.spec.js",
