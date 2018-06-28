@@ -1,6 +1,6 @@
 import app from './app'
 
-const port = process.env.PORT || 4040
+const port = 4040;
 
 app.listen(port, (err) => {
     if (err) {
